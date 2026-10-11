@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest an idea or a new layout or palette
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+  - type: textarea
+    id: ref
+    attributes:
+      label: Examples or references
+      description: Sketches, links or screenshots are welcome.

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use TierBloom, please cite it as below."
+title: "TierBloom"
+version: 1.0.0
+date-released: 2026-10-11
+license: MIT
+repository-code: "https://github.com/ocvSHANTO/TierBloom"
+url: "https://ocvshanto.github.io/TierBloom/"
+authors:
+  - family-names: "Islam Shanto"
+    given-names: "Junayed"
