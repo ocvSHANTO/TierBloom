@@ -24,7 +24,7 @@ TierBloom is a **zero-dependency, single-file web app**: `index.html` contains t
 | Export studio | `$('#exp').onclick` | Preview, options and download |
 
 ## State
-All state lives in memory: `tiers` (id, name, colour, item ids), `pool` (unplaced ids) and `imgs` (id to `Image`). Nothing is persisted except the light/dark choice in `localStorage`.
+All state lives in memory: `tiers` (id, name, colour, item ids), `pool` (unplaced ids) and `imgs` (id to `Image`). Nothing is persisted automatically except the light/dark choice in `localStorage`. Boards are saved only when you press save: `saveBoard()` writes tiers, pool and images (as data URLs) to a `.tierbloom` JSON file, and `loadBoard()` validates it strictly before replacing the state.
 
 ## Drag and drop on touch screens
 1. `pointerdown` on an image starts a 220 ms timer.

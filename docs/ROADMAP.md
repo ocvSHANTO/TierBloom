@@ -2,7 +2,7 @@
 
 Ideas, roughly in priority order. Open an issue to vote or suggest more.
 
-- [ ] Save and load boards as a small `.tierbloom` file (still fully local)
+- [x] Save and load boards as a `.tierbloom` file (still fully local), shipped in 1.1.0
 - [ ] Undo and redo
 - [ ] Bengali and other interface languages
 - [ ] Custom layout builder

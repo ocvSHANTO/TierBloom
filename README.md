@@ -18,7 +18,7 @@ A free, offline tier list maker with touch-friendly drag and drop, **19 export l
 ![Layouts](https://img.shields.io/badge/layouts-19-4da3ff)
 ![Palettes](https://img.shields.io/badge/palettes-26-19c3a8)
 ![Max export](https://img.shields.io/badge/max%20export-8K-ffb347)
-![Version](https://img.shields.io/badge/version-1.0.0-informational)
+![Version](https://img.shields.io/badge/version-1.1.0-informational)
 ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 <br>
@@ -108,6 +108,7 @@ Most tier list makers give you one look and one export size. TierBloom was built
 - Drop an image on the red bar to remove it
 - Editable board title that becomes the export title
 - Animated import with progress, and automatic thumbnail resizing for speed
+- **Save and open boards** as a `.tierbloom` file stored on your own device, with drag-and-drop opening and an unsaved-changes warning
 
 ### Export studio
 - Preview that always shows the **whole** image (Fit) or full width with scrolling (Full)
@@ -167,7 +168,7 @@ Prefer your own tier colours? Turn **Palette tier colours** off in the export st
 1. **Open the app** and tap **Add images**. Pick as many as you like.
 2. **Press and hold** an image until it lifts, then drag it into a tier. A normal swipe scrolls the page.
 3. **Edit tiers**: tap a label to rename or recolour it, or use the arrows beside it to move it up or down.
-4. **Name your list** at the top of the board.
+4. **Name your list** at the top of the board, and use the save button to keep it as a `.tierbloom` file you can open later.
 5. Press **Export**, choose a layout, palette and quality, check the preview, then **Download**.
 
 > Tip: drag an image onto the red bar at the top to remove it.
@@ -285,7 +286,7 @@ Yes, provided you own or are licensed to use the images you imported. The app it
 </details>
 
 <details><summary><b>Can I save my board and continue later?</b></summary>
-Not yet, because nothing is stored. Saving boards to a local file is on the [roadmap](docs/ROADMAP.md).
+Yes. Press the save button in the top bar to download a `.tierbloom` file with your tiers, colours, images and title. Open it later with the folder button, or drag it onto the app. The file stays on your device.
 </details>
 
 <details><summary><b>Dragging scrolls the page on my phone.</b></summary>
@@ -294,7 +295,7 @@ Press and hold the image for a moment until it lifts before you move your finger
 
 ## Roadmap
 
-Save and load boards, undo and redo, more languages, a custom layout builder and more. See [docs/ROADMAP.md](docs/ROADMAP.md).
+Undo and redo, templates, captions, more languages, a custom layout builder and more. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Contributing
 

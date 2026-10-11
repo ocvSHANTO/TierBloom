@@ -136,6 +136,8 @@ h1 .w{display:inline-block;white-space:nowrap}h1 .ch{display:inline-block;opacit
 .bti{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 12px 6px;color:var(--mu)}.bti input{background:transparent;border:0;border-bottom:2px dashed var(--ln);color:var(--ink);font-family:inherit;font-weight:800;font-size:clamp(1.4rem,6vw,2.2rem);text-align:center;outline:none;width:min(80%,520px);letter-spacing:-.02em;transition:.3s}.bti input:focus{border-color:var(--ac)}
 #bin{position:fixed;top:calc(84px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-30px);opacity:0;pointer-events:none;z-index:90;padding:12px 20px;border-radius:14px;background:#7f1d1d;color:#fff;display:flex;gap:8px;align-items:center;transition:.25s;font-weight:600;font-size:.9rem}body.drag #bin{opacity:1;transform:translate(-50%,0)}#bin.over{background:#dc2626;scale:1.08}
 .lab small{display:block;font-size:.62rem;opacity:.7;font-weight:700}
+.top #exp{margin-left:auto}@media(max-width:520px){.top .lg{display:none}.top .ib{width:34px}.top .btn{padding:9px 12px}}
+#drop{position:fixed;inset:0;z-index:350;display:none;place-items:center;background:rgba(10,26,51,.82);backdrop-filter:blur(6px);font-size:1.4rem;font-weight:700;color:#fff;border:3px dashed var(--ac);margin:14px;border-radius:24px}body.fdrag #drop{display:grid}
 </style></head><body>
 <noscript><p style="padding:40px;font-family:system-ui;color:#eaf2ff;background:#0a1a33">TierBloom needs JavaScript to run. Everything stays on your device.</p></noscript>
 <div class="bg"><i></i><i></i><i></i></div>
@@ -175,13 +177,13 @@ h1 .w{display:inline-block;white-space:nowrap}h1 .ch{display:inline-block;opacit
 </div>
 
 <div id="app" hidden>
-<div class="top"><a class="ib" href="#/" aria-label="Home"><span data-i="left"></span></a><span class="lg">TierBloom</span><button class="ib tg" aria-label="Toggle theme"><span class="mn" data-i="moon"></span><span class="sn" data-i="sun"></span></button><button class="ib" id="addT" aria-label="Add tier"><span data-i="plus"></span></button><button class="ib" id="rst" aria-label="Reset"><span data-i="rot"></span></button><button class="btn" id="exp"><span data-i="dl" data-s="16"></span>Export</button></div>
+<div class="top"><a class="ib" href="#/" aria-label="Home"><span data-i="left"></span></a><span class="lg">TierBloom</span><button class="ib tg" aria-label="Toggle theme"><span class="mn" data-i="moon"></span><span class="sn" data-i="sun"></span></button><button class="ib" id="addT" aria-label="Add tier"><span data-i="plus"></span></button><button class="ib" id="rst" aria-label="Reset" title="Reset"><span data-i="rot"></span></button><button class="ib" id="sv" aria-label="Save board" title="Save board"><span data-i="save"></span></button><button class="ib" id="ld" aria-label="Open board" title="Open board"><span data-i="open"></span></button><input type="file" id="lf" accept=".tierbloom,application/json" hidden><button class="btn" id="exp"><span data-i="dl" data-s="16"></span>Export</button></div>
 <div class="bti"><input id="btn" value="My Tier List" maxlength="50" aria-label="Tier list title"><span data-i="pencil" data-s="16"></span></div><div id="bin"><span data-i="trash" data-s="18"></span>Drop here to remove</div><div id="board"></div>
 <div class="dock" id="dock"><div id="imp" hidden><div class="ir"><span class="spin"></span><span class="ok" data-i="check" data-s="13"></span><b id="it"></b><em id="ip"></em></div><div class="tk"><s></s></div></div>
 <div class="dh"><button class="btn" id="plus"><span data-i="plus" data-s="16"></span>Add images</button><span id="cnt"></span><button class="ib" id="col" aria-label="Collapse"><span data-i="down"></span></button></div>
 <div id="pool" data-z="pool"></div><input type="file" id="file" accept="image/*" multiple hidden></div>
 </div>
-<div id="toast"></div>
+<div id="drop">Drop a .tierbloom file to open it</div><div id="toast"></div>
 
 <script>
 const BRAND='TierBloom',SUPPORT_URL='';
@@ -233,7 +235,7 @@ cur.style.opacity=0;await sl(400);sw.classList.add('ex');for(const pi of[0,2,1,4
 sw.classList.remove('ex');st.classList.remove('sweep');cards.forEach((c,i)=>setTimeout(()=>c.style.transform=P(tr[i]),i*90));await sl(1700);busy=0}}
 /* board */
 const item=id=>{const n=E('div','it'+(fresh.has(id)?' nw':''));n.style.backgroundImage=`url(${imgs[id].src})`;n.dataset.id=id;if(fresh.has(id))n.style.animationDelay=(fresh.size>1?[...fresh].indexOf(id)%12*35:0)+'ms';n.oncontextmenu=e=>e.preventDefault();return n};
-function draw(){const b=$('#board');b.innerHTML='';tiers.forEach((t,i)=>{const r=E('div','row'+(mv==t.id?' mv':'')),rl=E('div','rail',`<button data-a="u" aria-label="Move up">${I('up',16)}</button><button data-a="e" aria-label="Edit">${I('pencil',16)}</button><button data-a="d" aria-label="Move down">${I('down',16)}</button>`),l=E('div','lab',esc(t.name)+(t.items.length?`<small>${t.items.length}</small>`:'')),z=E('div','zone');l.style.background=t.color;l.style.color=lum(t.color)>150?'#111':'#fff';l.onclick=()=>editTier(t);z.dataset.z=t.id;t.items.forEach(x=>z.append(item(x)));
+function draw(){dirty=1;const b=$('#board');b.innerHTML='';tiers.forEach((t,i)=>{const r=E('div','row'+(mv==t.id?' mv':'')),rl=E('div','rail',`<button data-a="u" aria-label="Move up">${I('up',16)}</button><button data-a="e" aria-label="Edit">${I('pencil',16)}</button><button data-a="d" aria-label="Move down">${I('down',16)}</button>`),l=E('div','lab',esc(t.name)+(t.items.length?`<small>${t.items.length}</small>`:'')),z=E('div','zone');l.style.background=t.color;l.style.color=lum(t.color)>150?'#111':'#fff';l.onclick=()=>editTier(t);z.dataset.z=t.id;t.items.forEach(x=>z.append(item(x)));
 rl.querySelectorAll('button').forEach(bt=>bt.onclick=()=>{const a=bt.dataset.a;if(a=='e')return editTier(t);const j=a=='u'?i-1:i+1;if(j<0||j>=tiers.length)return;[tiers[i],tiers[j]]=[tiers[j],tiers[i]];mv=t.id;draw();mv=0});r.append(rl,l,z);b.append(r)});
 const p=$('#pool');p.innerHTML='';pool.forEach(i=>p.append(item(i)));if(!pool.length)p.append(E('span','empty',Object.keys(imgs).length?'All images are ranked':'Tap "Add images" to start'));fresh.clear();const n=Object.keys(imgs).length;$('#cnt').textContent=`${n} image${n==1?'':'s'} · ${pool.length} in tray`}
 $('#col').onclick=()=>$('#dock').classList.toggle('c');
@@ -359,6 +361,27 @@ $('#mq2').innerHTML='<div>'+W.concat(['players','characters','restaurants','albu
 document.querySelectorAll('.hero .btn,.nv .btn').forEach(b=>{b.addEventListener('pointermove',e=>{if(e.pointerType=='touch')return;const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.3}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
 $('#up').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#btn').oninput=e=>BT=e.target.value;
 const cat=$('#cat');['All','Desktop','Social','Mobile','Text','Artistic'].forEach(k=>{const b=E('button','cp'+(k=='All'?' on':''),k);b.onclick=()=>{gcat=k;cat.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x==b));gal()};cat.append(b)})}
+
+/* save and load boards */
+let dirty=0;IC.save='<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/>';IC.open='<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>';
+function saveBoard(){if(!Object.keys(imgs).length)return toast('Add some images first');
+const d={app:'TierBloom',version:1,title:BT,saved:new Date().toISOString(),tiers:tiers.map(t=>({name:t.name,color:t.color,items:t.items})),pool,images:Object.fromEntries(Object.entries(imgs).map(([k,im])=>[k,im.src]))},
+blob=new Blob([JSON.stringify(d)],{type:'application/json'}),a=E('a'),nm=(BT||'tier-list').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'tier-list';
+a.href=URL.createObjectURL(blob);a.download=nm+'.tierbloom';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);dirty=0;toast(`Board saved · ${(blob.size/1048576).toFixed(1)} MB`)}
+async function loadBoard(file){try{if(file.size>400*1048576)throw 0;const d=JSON.parse(await file.text());if(d.app!=='TierBloom'||!Array.isArray(d.tiers)||d.tiers.length>60||typeof d.images!=='object')throw 0;
+const ni={},ok=/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/;
+for(const[k,v]of Object.entries(d.images)){if(!/^\d+$/.test(k)||typeof v!=='string'||!ok.test(v))throw 0;const im=new Image();im.src=v;await im.decode();ni[k]=im}
+const seen=new Set(),clean=a=>(Array.isArray(a)?a:[]).map(String).filter(i=>ni[i]&&!seen.has(i)&&seen.add(i)).map(Number);
+const nt=d.tiers.map(t=>({id:uid++,name:String(t.name||'').slice(0,24),color:/^#[0-9a-f]{6}$/i.test(t.color)?t.color:COL[0],items:clean(t.items)})),np=clean(d.pool);
+Object.keys(ni).forEach(i=>{if(!seen.has(i))np.push(+i)});
+if(Object.keys(imgs).length&&!confirm('Replace the current board with this file?'))return;
+imgs=Object.fromEntries(Object.entries(ni).map(([k,v])=>[+k,v]));tiers=nt;pool=np;uid=Math.max(uid,...Object.keys(ni).map(Number),0)+1;BT=String(d.title||'My Tier List').slice(0,50);$('#btn').value=BT;
+if(location.hash!=='#/app')location.hash='#/app';draw();dirty=0;toast(`Board opened · ${Object.keys(ni).length} images`)}catch(e){toast('This is not a valid TierBloom board file')}}
+$('#sv').onclick=saveBoard;$('#ld').onclick=()=>$('#lf').click();$('#lf').onchange=e=>{const f=e.target.files[0];e.target.value='';f&&loadBoard(f)};
+addEventListener('beforeunload',e=>{if(dirty&&Object.keys(imgs).length){e.preventDefault();e.returnValue=''}});
+let dc=0;addEventListener('dragenter',e=>{if(e.dataTransfer&&[...e.dataTransfer.types].includes('Files')&&!$('#app').hidden){dc++;document.body.classList.add('fdrag')}});
+addEventListener('dragleave',()=>{dc=Math.max(0,dc-1);if(!dc)document.body.classList.remove('fdrag')});addEventListener('dragover',e=>{if(e.dataTransfer&&[...e.dataTransfer.types].includes('Files'))e.preventDefault()});
+addEventListener('drop',e=>{dc=0;document.body.classList.remove('fdrag');const f=e.dataTransfer&&e.dataTransfer.files[0];if(!f)return;e.preventDefault();if(/\.tierbloom$/i.test(f.name)||f.type=='application/json')loadBoard(f);else if(f.type.startsWith('image/')&&!$('#app').hidden){const dt=new DataTransfer();[...e.dataTransfer.files].forEach(x=>dt.items.add(x));$('#file').files=dt.files;$('#file').dispatchEvent(new Event('change'))}});
 /* boot */
 function route(){const a=location.hash.startsWith('#/app');$('#landing').hidden=a;$('#app').hidden=!a;scrollTo(0,0);if(a){draw();const b=$('#board');b.classList.add('ent');b.querySelectorAll('.row').forEach((r,i)=>r.style.animationDelay=i*80+'ms');setTimeout(()=>b.classList.remove('ent'),1300)}}
 addEventListener('hashchange',route);ic();gal();route();hero();fx();misc();misc2();

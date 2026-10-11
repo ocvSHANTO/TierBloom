@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-10-12
+
+### Added
+- **Save and open boards**: save your whole board (tiers, colours, images, title) to a single `.tierbloom` file on your device and open it later
+- Drag a `.tierbloom` file onto the app to open it, or drag image files onto the board to import them
+- Warning before closing the page when you have unsaved changes
+- Strict validation of opened files (images must be data images, colours and names are sanitised)
+
+### Changed
+- Top bar is more compact on small phones
+
 ## [1.0.0] - 2026-10-11
 
 ### Added
