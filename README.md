@@ -1,6 +1,15 @@
+![TierBloom cover — Rank anything. Share it in style.](docs/screenshots/cover.png)
+
 # TierBloom
 
 **Rank anything. Share it in style.**
+
+<p align="center">
+  <a href="https://ocvshanto.github.io/TierBloom/"><img alt="Open the live app" src="https://img.shields.io/badge/▶_Open_the_live_app-ff4d2e?style=for-the-badge"></a>
+  <a href="#export-themes"><img alt="See all 12 themes" src="https://img.shields.io/badge/🎨_See_all_12_themes-ffb020?style=for-the-badge"></a>
+  <a href="#how-it-works"><img alt="How it works in 3 steps" src="https://img.shields.io/badge/⚡_How_it_works_in_3_steps-8fce2e?style=for-the-badge"></a>
+  <a href="#aspect-ratios"><img alt="Aspect ratios" src="https://img.shields.io/badge/▭_Aspect_ratios-2f9df4?style=for-the-badge"></a>
+</p>
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-ff4d2e?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
 [![No Sign-up](https://img.shields.io/badge/Sign--up-Not%20required-8fce2e?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
@@ -17,6 +26,7 @@ TierBloom is a free, mobile-first tier list maker. Everything runs in your brows
 ## Table of contents
 
 - [Why TierBloom](#why-tierbloom)
+- [At a glance — charts](#at-a-glance--charts)
 - [Screenshots](#screenshots)
 - [How it works](#how-it-works)
 - [Export themes](#export-themes)
@@ -52,9 +62,52 @@ Most tier list makers give you one board and one flat export. TierBloom was rebu
 
 ---
 
+## At a glance — charts
+
+### The flow, in one picture
+
+```mermaid
+flowchart LR
+    A[📸 Add photos\nor text cards] --> B[🏆 Drag into tiers\nS · A · B · C · D]
+    B --> C[🎨 Pick one of\n12 themes]
+    C --> D[▭ Pick an aspect ratio\n+ transparent PNG?]
+    D --> E[⬇️ Download\nup to 4K]
+    style A fill:#f7f2df,stroke:#e8490f
+    style B fill:#f7f2df,stroke:#ffb020
+    style C fill:#f7f2df,stroke:#0e7a46
+    style E fill:#e8490f,stroke:#e8490f,color:#fff
+```
+
+### One ranking, every format — how the ratios compare
+
+The bars below are drawn to scale from the ratio itself, not from a screenshot. A taller bar means a taller image.
+
+| Ratio | Shape | Use it for |
+|---|---|---|
+| 1:1 Square | ██████████ | Feed posts, thumbnails |
+| 4:5 Post | ██████████<br>██████████ | Portrait feed posts |
+| 9:16 Story | ██████<br>██████<br>██████ | Stories, Reels, TikTok, Shorts |
+| 16:9 Desktop | ██████████████████ | YouTube thumbnails, presentations |
+| 21:9 Ultrawide | ██████████████████████████ | Banners, wide headers |
+| 9:19.5 Phone Tall | █████<br>█████<br>█████<br>█████ | Tall phone wallpapers |
+
+### Old version vs this rebuild
+
+|  | Old version in this repo | This rebuild |
+|---|---|---|
+| Export looks | 19 layouts sharing one row structure, 26 colour palettes | 12 completely separate theme designs, each with its own renderer |
+| Language | Mixed, hard to follow | Professional English by default |
+| Hero | Text-heavy | Visual-first: the workflow animates before you read |
+| Export preview | Scroll to check | Pinned at the top, updates in real time |
+| Transparent export | No | Yes, PNG with no background |
+| Aspect-ratio choice | No | 7 choices, from Square to Phone Tall |
+| Board on open | Preloaded demo items | Empty — demo only behind its own button |
+
+---
+
 ## Screenshots
 
-> Preview graphics showing the layout of the landing page, board and export studio. Replace these with live screenshots after the site is deployed if you want pixel-perfect captures — the app itself is the single `index.html` file in this repository.
+> **Cover photo:** the banner at the top of this README is a preview graphic made for the project. The four images below are also preview graphics showing the layout of the landing page, board and export studio — they are not pixel-perfect captures of the live app, because the live app is generated from the single `index.html` file in this repository. Once the site is live, these can be replaced with real captures.
 
 ### Landing — visual hero
 
