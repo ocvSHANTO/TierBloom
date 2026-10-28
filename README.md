@@ -1,31 +1,16 @@
-<div align="center">
-
-<img src="assets/logo.svg" width="96" alt="TierBloom logo">
-
 # TierBloom
 
-**Rank anything. Export it like a pro.**
+**Rank anything. Share it in style.**
 
-A free, offline tier list maker with touch-friendly drag and drop, **19 export layouts**, **26 colour palettes** and output up to **8K**. No sign-up. No uploads. Zero dependencies.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-ff4d2e?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
+[![No Sign-up](https://img.shields.io/badge/Sign--up-Not%20required-8fce2e?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
+[![Offline](https://img.shields.io/badge/Works-Offline-2f9df4?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
+[![Single File](https://img.shields.io/badge/Single%20File-HTML-ffb020?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-111111?style=for-the-badge)](LICENSE)
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-open%20app-4da3ff?style=for-the-badge)](https://ocvshanto.github.io/TierBloom/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-19c3a8?style=for-the-badge)](LICENSE)
-[![PWA ready](https://img.shields.io/badge/PWA-offline%20ready-ffb347?style=for-the-badge)](#install-as-an-app)
+> **Open it, add photos, drag them into tiers, and export a poster-worthy image — in under a minute, on your phone, with no account and no upload.**
 
-![No dependencies](https://img.shields.io/badge/dependencies-0-success)
-![Single file](https://img.shields.io/badge/app-single%20file-blue)
-![Privacy](https://img.shields.io/badge/uploads-none-brightgreen)
-![Layouts](https://img.shields.io/badge/layouts-19-4da3ff)
-![Palettes](https://img.shields.io/badge/palettes-26-19c3a8)
-![Max export](https://img.shields.io/badge/max%20export-8K-ffb347)
-![Version](https://img.shields.io/badge/version-1.1.0-informational)
-![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
-
-<br>
-
-<img src="assets/og-image.png" alt="TierBloom preview" width="860">
-
-</div>
+TierBloom is a free, mobile-first tier list maker. Everything runs in your browser. Your photos never leave your device. There is no server, no build step, and no API key — just one lightweight HTML file you can open anywhere.
 
 ---
 
@@ -33,302 +18,296 @@ A free, offline tier list maker with touch-friendly drag and drop, **19 export l
 
 - [Why TierBloom](#why-tierbloom)
 - [Screenshots](#screenshots)
-- [Features](#features)
-- [Export layouts](#export-layouts)
-- [Colour palettes](#colour-palettes)
-- [How to use](#how-to-use)
-- [Export options](#export-options)
-- [Install as an app](#install-as-an-app)
-- [Privacy](#privacy)
-- [Browser support](#browser-support)
-- [Run locally](#run-locally)
-- [Deploy to GitHub Pages](#deploy-to-github-pages)
-- [Customise](#customise)
-- [Project structure](#project-structure)
 - [How it works](#how-it-works)
+- [Export themes](#export-themes)
+- [Aspect ratios](#aspect-ratios)
+- [Export options](#export-options)
+- [App features](#app-features)
+- [Touch guide](#touch-guide)
+- [Privacy](#privacy)
+- [Run it yourself](#run-it-yourself)
+- [Project structure](#project-structure)
 - [FAQ](#faq)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [Security](#security)
-- [Author](#author)
 - [License](#license)
-- [বাংলা সারসংক্ষেপ](#বাংলা-সারসংক্ষেপ)
+- [Author](#author)
+
+---
 
 ## Why TierBloom
 
-Most tier list makers give you one look and one export size. TierBloom was built around the **result**: a ranking you are proud to post.
+Most tier list makers give you one board and one flat export. TierBloom was rebuilt around the **result**:
 
-- **Beautiful exports.** 19 genuinely different layouts, not colour swaps.
-- **Made for phones.** Press and hold to drag, swipe to scroll. The two never fight.
-- **Private by design.** Your images never leave your device.
-- **Sharp at any size.** From a chat-friendly 1x to 8K, with the exact pixel size shown before you download.
-- **Nothing to install.** One HTML file, no build step, works offline.
+| What you get | Why it matters |
+|---|---|
+| **12 completely different themes** | Each theme is its own canvas renderer — its own layout, frames, fonts, background and structure. Not a colour swap. |
+| **Visual-first hero** | An animated workflow shows photo → tier → poster before you read a word. |
+| **Mobile-first touch** | Long-press drag plus tap-to-place, so scrolling and dragging never fight. |
+| **Frozen, real-time export preview** | Change a theme, ratio or setting and the preview at the top updates instantly. No scrolling up to check. |
+| **Transparent PNG** | Export with no background, ready for thumbnails, overlays and social posts. |
+| **Aspect-ratio choice** | Square, story, post, desktop, ultrawide and tall phone — one ranking, every format. |
+| **Private by design** | No accounts, no analytics, no uploads, no tracking. |
+| **One file, offline** | Open `index.html` and it works. Upload the same file to GitHub Pages or Netlify and it is live. |
+
+---
 
 ## Screenshots
 
-<table>
-<tr>
-<td width="50%"><img src="docs/screenshots/01-landing-hero.png" alt="Landing page hero"><br><sub><b>Landing hero</b> with animated background and 3D board</sub></td>
-<td width="50%"><img src="docs/screenshots/02-hero-export-reveal.png" alt="Hero export reveal"><br><sub><b>Ranking becomes exports</b>: real renders fan out behind the board</sub></td>
-</tr>
-<tr>
-<td><img src="docs/screenshots/03-export-gallery.png" alt="Export gallery"><br><sub><b>Live export gallery</b> with palette picker and filters</sub></td>
-<td><img src="docs/screenshots/04-app-desktop.png" alt="App on desktop"><br><sub><b>The board</b> with editable tiers and image tray</sub></td>
-</tr>
-<tr>
-<td colspan="2"><img src="docs/screenshots/05-export-studio.png" alt="Export studio"><br><sub><b>Export studio</b>: full preview, layouts, palettes, quality and options</sub></td>
-</tr>
-</table>
+> Preview graphics showing the layout of the landing page, board and export studio. Replace these with live screenshots after the site is deployed if you want pixel-perfect captures — the app itself is the single `index.html` file in this repository.
 
-### On mobile
+### Landing — visual hero
 
-<p align="center">
-<img src="docs/screenshots/06-mobile-landing.png" width="230" alt="Mobile landing">
-&nbsp;
-<img src="docs/screenshots/07-mobile-app.png" width="230" alt="Mobile app">
-&nbsp;
-<img src="docs/screenshots/08-mobile-export.png" width="230" alt="Mobile export">
-</p>
+![TierBloom landing hero](docs/screenshots/hero-desktop.png)
 
-## Features
+*The hero shows the workflow visually: photos come in, cards settle into tiers, and an export poster cycles through themes.*
 
-### Landing page
-- Self-playing 3D hero: a cursor drags cards into tiers, then the board turns into real exports in several palettes
-- Animated canvas background with flowing ribbons and a constellation of particles
-- Scroll animations, card spotlight and tilt, ripple on touch, magnetic buttons and a scroll progress bar
-- Live export gallery rendered by the real export engine, filterable by category and palette
-- Bento feature grid, FAQ, stats counters and detailed legal pages
-- Light and dark themes, reduced-motion support
+### Landing — mobile
 
-### Board
-- **Touch-safe drag and drop** using Pointer Events with a long-press on touch screens
-- Auto-scroll while dragging near the screen edges
-- **Editable tiers**: rename, recolour (presets or any colour), reorder with up and down buttons, add above or below, clear or delete
-- Per-tier image counts
-- Drop an image on the red bar to remove it
-- Editable board title that becomes the export title
-- Animated import with progress, and automatic thumbnail resizing for speed
-- **Save and open boards** as a `.tierbloom` file stored on your own device, with drag-and-drop opening and an unsaved-changes warning
+![TierBloom on mobile](docs/screenshots/hero-mobile.png)
+
+*The same hero, reflowed for a phone: big type, generous spacing, and only two clear buttons.*
+
+### The board
+
+![TierBloom board](docs/screenshots/app.png)
+
+*An empty board on open. Add photos, drag them into S, A, B, C and D tiers, or tap a card and then tap a tier.*
 
 ### Export studio
-- Preview that always shows the **whole** image (Fit) or full width with scrolling (Full)
-- **19 layouts**, **26 palettes**, three image sizes, four title sizes
-- Corner style, spacing, background pattern, item counts, rank numbers, image shadow and borders
-- Quality from 1x to **Ultra (8K)** including **Print** (A4 at 300 dpi)
-- PNG, JPG and WebP output with a live pixel-size readout
 
-### Engineering
-- Zero dependencies, zero network requests, one file
-- Installable PWA with an offline service worker
-- Accessible focus styles, `prefers-reduced-motion` support, semantic labels
+![TierBloom export studio](docs/screenshots/export.png)
 
-## Export layouts
+*The preview stays pinned at the top while settings scroll below. Change anything and the preview updates in real time.*
 
-Every layout redraws labels, shapes, backgrounds and typography. See the full gallery with categories in [docs/LAYOUTS.md](docs/LAYOUTS.md).
+---
 
-<table>
-<tr>
-<td align="center"><img src="docs/examples/story.png" width="170" alt="story layout"><br><sub>Story 9:16</sub></td>
-<td align="center"><img src="docs/examples/polaroid.png" width="250" alt="polaroid layout"><br><sub>Polaroid Wall</sub></td>
-<td align="center"><img src="docs/examples/neon.png" width="250" alt="neon layout"><br><sub>Neon Arcade</sub></td>
-<td align="center"><img src="docs/examples/cinema.png" width="250" alt="cinema layout"><br><sub>Cinema</sub></td>
-</tr>
-<tr>
-<td align="center"><img src="docs/examples/aurora.png" width="170" alt="aurora layout"><br><sub>Aurora 4:5</sub></td>
-<td align="center"><img src="docs/examples/news.png" width="200" alt="news layout"><br><sub>Gazette</sub></td>
-<td align="center"><img src="docs/examples/blueprint.png" width="250" alt="blueprint layout"><br><sub>Blueprint</sub></td>
-<td align="center"><img src="docs/examples/scoreboard.png" width="250" alt="scoreboard layout"><br><sub>Scoreboard</sub></td>
-</tr>
-<tr>
-<td colspan="2" align="center"><img src="docs/examples/split.png" width="420" alt="split layout"><br><sub>Widescreen Split</sub></td>
-<td colspan="2" align="center"><img src="docs/examples/desktop.png" width="420" alt="desktop layout"><br><sub>Desktop HD</sub></td>
-</tr>
-</table>
+## How it works
 
-| Category | Layouts |
-|---|---|
-| Desktop | Editorial, Desktop HD, Widescreen Split, Landscape 16:9 |
-| Social | Story 9:16, Square Block, Poster, Glass, Aurora 4:5 |
-| Mobile | Mobile |
-| Text | Ledger, Magazine, Typeset, Gazette |
-| Artistic | Blueprint, Scoreboard, Cinema, Polaroid Wall, Neon Arcade |
+### 1. Add photos
 
-## Colour palettes
+Tap **Add Photos** and pick as many images as you like from your gallery, or tap **Text Card** and type a name instead of a photo. Nothing is uploaded.
 
-26 palettes change the background, rows, text and **tier colours**, so the whole design transforms.
+### 2. Rank them
 
-<img src="docs/screenshots/palettes.png" alt="All 26 palettes">
+Drag a card into a tier — on a phone, press and hold for a moment until it lifts, then drag. Or tap a card to select it, then tap the tier where it belongs. Rename a tier, change its colour, move it up or down, or add a new tier in the middle.
 
-Ocean Deep, Ember, Forest, Royal Indigo, Sand, Sky, Mint, Slate, Teal Night, Crimson Night, Gold Noir, Lavender, Citrus, Mono Paper, Cobalt, Deep Space, Merlot, Midnight Gold, Sage, Steel, Copper, Ice, Volcano, Matcha, Dusk, Arctic Night.
+### 3. Pick a theme, ratio and background — then export
 
-Prefer your own tier colours? Turn **Palette tier colours** off in the export studio.
+Open **Export Image — Pick a Theme & Download**, choose a theme and an aspect ratio, turn on **Transparent Background** if you want a PNG with no background, check the pinned preview, and download as PNG or JPG up to 4K.
 
-## How to use
+---
 
-1. **Open the app** and tap **Add images**. Pick as many as you like.
-2. **Press and hold** an image until it lifts, then drag it into a tier. A normal swipe scrolls the page.
-3. **Edit tiers**: tap a label to rename or recolour it, or use the arrows beside it to move it up or down.
-4. **Name your list** at the top of the board, and use the save button to keep it as a `.tierbloom` file you can open later.
-5. Press **Export**, choose a layout, palette and quality, check the preview, then **Download**.
+## Export themes
 
-> Tip: drag an image onto the red bar at the top to remove it.
+Every theme below is drawn by its own renderer. Switching themes changes the whole design, not just the colours.
+
+| # | Theme | What it looks like | Best for |
+|---|---|---|---|
+| 1 | **Football Stadium** | Grass pitch lines, centre circle, goalposts, scoreboard-style header, tiers labelled `S TIER`, `A TIER` and so on | Football teams, players, matches |
+| 2 | **Cinema Poster** | Film strip, golden marquee lights, large serif title | Films, series, actors |
+| 3 | **Newspaper** | Masthead, column rules, black-and-white images, serif headline | Books, news, classic rankings |
+| 4 | **Polaroid Wall** | Taped, slightly tilted frames, handwritten-style captions | Travel, memories, friends |
+| 5 | **Neon Arcade** | Dark background, glowing neon sign, grid lines | Games, music, retro lists |
+| 6 | **Classic Board** | Clean, professional ranking board where only the ranking matters | Any serious ranking |
+| 7 | **Trophy Hall** | Burgundy, crown, gold plaques | Winners, awards, best-of lists |
+| 8 | **Blueprint** | Drafting grid, dashed technical frames | Design, tech, plans |
+| 9 | **Comic Pop** | Bold comic shapes, punchy colour, pop-art energy | Comics, anime, fun lists |
+| 10 | **Botanical** | Soft leaves, organic shapes, calm natural palette | Food, plants, lifestyle |
+| 11 | **Galaxy** | Deep space, stars, cosmic glow | Sci-fi, space, dreamy lists |
+| 12 | **Retro Diner** | Vintage diner signs, warm retro colours | Food, music, nostalgia |
+
+---
+
+## Aspect ratios
+
+Pick the format before you download — the preview reshapes to match, so what you see is what you get.
+
+| Ratio | Name in the app | Use it for |
+|---|---|---|
+| Auto | Auto | Let the theme decide its natural shape |
+| 1:1 | Square | Feed posts, profile grids, thumbnails |
+| 4:5 | Post | Portrait feed posts |
+| 9:16 | Story | Stories, Reels, TikTok, Shorts |
+| 16:9 | Desktop | YouTube thumbnails, presentations, desktop posts |
+| 21:9 | Ultrawide | Banners, wide headers, cinematic posts |
+| 9:19.5 | Phone Tall | Tall phone wallpapers and full-screen stories |
+
+---
 
 ## Export options
 
 | Setting | Options |
 |---|---|
-| Layout | 19 layouts |
-| Colour palette | 26 palettes |
-| Image size | Compact, Regular, Large |
-| Title size | Small, Normal, Large, XL |
-| Corners | Layout default, Sharp, Round |
-| Spacing | Tight, Normal, Airy |
-| Pattern | None, Dots, Grid, Diagonal |
-| Quality | 1x, 2x, 3x, 4x, HD (1920), Print (2480), 4K (3840), 5K (5120), Ultra (7680) |
-| Format | PNG, JPG, WebP |
-| Extras | Watermark, palette tier colours, item counts, rank numbers, image shadow, image borders |
-| Text | Title, subtitle, credit |
+| Theme | 12 separate worlds (see above) |
+| Aspect ratio | Auto, Square 1:1, Post 4:5, Story 9:16, Desktop 16:9, Ultrawide 21:9, Phone Tall 9:19.5 |
+| Format | PNG, JPG |
+| Transparent background | PNG only — the image has no background. JPG always falls back to a solid background, and the app says so in plain words. |
+| Size | Up to 4K, with the true pixel size shown before download |
+| Preview | Pinned at the top of the studio, updating in real time |
+| Download animation | A clear “Rendering your image…” state while the export is drawn |
 
-Details: [docs/EXPORT_GUIDE.md](docs/EXPORT_GUIDE.md).
+**Tip:** Transparent PNG is perfect for thumbnails and overlays. If a theme draws its own background art (for example the football pitch), transparency removes the background layer so the ranking can sit on any design of your own.
 
-## Install as an app
+---
 
-TierBloom is a Progressive Web App. In Chrome or Edge choose **Install app** from the address bar or menu. On Android use **Add to Home screen**. After the first visit it works fully offline.
+## App features
+
+- **Empty board on open** — no demo photos pretending to be yours. Demo items are only behind a separate “Try with demo” button.
+- **Photo import with animation** — an animated overlay with a spinner and progress bar, then cards pop in one by one. No sudden jumps.
+- **Text cards** — rank a name even when you have no photo for it.
+- **Editable tiers** — rename, recolour, reorder, add above or below, clear or delete. Colours appear only in edit mode, so the board stays clean.
+- **Sticky pool dock** — unranked items live in a collapsible dock at the bottom. It never scrolls away, and it never permanently eats the screen.
+- **Save and open boards** — save a board as a `.tierbloom` file on your device and open it later to continue exactly where you left off.
+- **Bottom Export bar** — the main action is always within thumb reach: **Export Image — Pick a Theme & Download**.
+- **System fonts, no external dependencies** — the file works offline and loads fast, even on a low-end phone.
+
+---
+
+## Touch guide
+
+| You want to… | Do this |
+|---|---|
+| Scroll the page | Swipe normally — cards do not lift |
+| Drag a card | Press and hold for about 250 ms until it lifts, then drag |
+| Place without dragging | Tap the card to select it, then tap the tier |
+| Rename a tier | Tap the tier name, edit, confirm |
+| Change a tier colour | Enter edit mode for that tier, pick a colour dot |
+| See unranked items | Tap the pool dock at the bottom to expand it |
+
+---
 
 ## Privacy
 
-- Images are read and resized **in your browser** and never uploaded
-- No accounts, no analytics, no cookies, no third-party requests
-- Only your light or dark theme choice is stored locally
-- Closing the page clears your board
+- Photos are read and resized **in your browser** and never uploaded.
+- No accounts, no analytics, no cookies, no third-party requests.
+- Boards and imported images exist only in memory. Closing the page clears them unless you saved a `.tierbloom` file yourself.
+- Exports are created on your device by your browser. TierBloom never receives a copy.
 
-Full policies are in the app footer and in [docs/PRIVACY.md](docs/PRIVACY.md).
+---
 
-## Browser support
+## Run it yourself
 
-| Browser | Support |
-|---|---|
-| Chrome, Edge, Brave, Opera (desktop and Android) | Full |
-| Safari (macOS and iOS 16+) | Full |
-| Firefox | Full |
+### Option 1 — Just open it (fastest)
 
-Requires Canvas 2D, Pointer Events and CSS `color-mix()` (all evergreen browsers).
+1. Download `index.html` from this repository.
+2. Open it in any modern browser on your phone or computer.
+3. That is it. No install, no server.
 
-## Run locally
+### Option 2 — GitHub Pages
 
-No build step is needed.
+1. Fork or clone this repository.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**, branch **main**, folder **/ (root)**.
+4. Save. Your site will be live at `https://<your-username>.github.io/TierBloom/`.
+
+### Option 3 — Netlify drag-and-drop
+
+1. Download this repository as a ZIP, or just take `index.html`.
+2. Drag the folder or file into Netlify Drop.
+3. Netlify gives you a live link instantly. No build command is needed.
+
+### Option 4 — Local server (optional)
 
 ```bash
-git clone https://github.com/ocvSHANTO/TierBloom.git
-cd TierBloom
-npm start          # serves the folder (or: python3 -m http.server 8000)
-npm run check      # sanity check
+python3 -m http.server 8000
+# then open http://localhost:8000
 ```
 
-You can also just open `index.html` in a browser (the offline cache needs `http://` or `https://`).
-
-## Deploy to GitHub Pages
-
-1. Create a public repository named **TierBloom**
-2. Upload all files, keeping the folder structure
-3. **Settings > Pages > Source: GitHub Actions**
-4. Push to `main`
-
-Your site will be live at **https://ocvshanto.github.io/TierBloom/**. Full steps and custom domains: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
-
-## Customise
-
-Open `index.html` and search for these:
-
-| What | Where |
-|---|---|
-| Brand name | `const BRAND` |
-| Support button link | `const SUPPORT_URL` |
-| Social links | `const SOC` |
-| Developer info window | `$('#dev').onclick` |
-| Colours | CSS variables in `:root` and `[data-t=light]` |
-| Layouts and palettes | `LY` and `PAL`, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
-| Legal texts | `const LEG` |
+---
 
 ## Project structure
 
 ```text
 TierBloom/
-├── index.html              # The whole app (markup, CSS, JS)
-├── 404.html                # Friendly not-found page
-├── manifest.webmanifest    # PWA manifest
-├── sw.js                   # Offline service worker
-├── assets/                 # Logo, favicons, PWA icons, social preview
-├── docs/                   # Guides, architecture, screenshots, layout examples
-├── scripts/check.js        # Sanity check used by CI
-├── .github/                # Issue and PR templates, Pages and CI workflows
-├── CHANGELOG.md  CONTRIBUTING.md  CODE_OF_CONDUCT.md  SECURITY.md
-├── LICENSE  CITATION.cff  package.json
-└── robots.txt  sitemap.xml  humans.txt  .nojekyll
+├── index.html              # The whole app — landing, board, export studio
+├── README.md               # This file
+├── LICENSE                 # MIT License
+└── docs/
+    └── screenshots/        # Landing, mobile, board and export captures
+        ├── hero-desktop.png
+        ├── hero-mobile.png
+        ├── app.png
+        └── export.png
 ```
 
-## How it works
-
-TierBloom is a single HTML file. The board lives in memory, images are center-cropped to 480 px thumbnails on import, and one Canvas 2D renderer draws every export, the landing gallery and the hero reveal. Layouts and palettes are plain data, so adding one takes a few lines. Read the full design in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
-
-## FAQ
-
-<details><summary><b>Are my images uploaded anywhere?</b></summary>
-No. Everything happens inside your browser and nothing is sent over the network.
-</details>
-
-<details><summary><b>Why is my 4K or Ultra export smaller than expected?</b></summary>
-Browsers limit canvas size, especially on phones. TierBloom shows the exact output size and reduces it only when your device cannot render more.
-</details>
-
-<details><summary><b>Can I use exported images commercially?</b></summary>
-Yes, provided you own or are licensed to use the images you imported. The app itself is MIT licensed.
-</details>
-
-<details><summary><b>Can I save my board and continue later?</b></summary>
-Yes. Press the save button in the top bar to download a `.tierbloom` file with your tiers, colours, images and title. Open it later with the folder button, or drag it onto the app. The file stays on your device.
-</details>
-
-<details><summary><b>Dragging scrolls the page on my phone.</b></summary>
-Press and hold the image for a moment until it lifts before you move your finger. Moving first scrolls the page on purpose.
-</details>
-
-## Roadmap
-
-Undo and redo, templates, captions, more languages, a custom layout builder and more. See [docs/ROADMAP.md](docs/ROADMAP.md).
-
-## Contributing
-
-Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md), then open an issue or a pull request.
-
-## Security
-
-Please report vulnerabilities privately. See [SECURITY.md](SECURITY.md).
-
-## Author
-
-**Junayed Islam Shanto** (Shanto), Blackso Studio, Bangladesh.
-Independent Web Developer, Android App Developer, UI/UX Designer and AI Enthusiast.
-
-[![GitHub](https://img.shields.io/badge/GitHub-ocvSHANTO-181717?logo=github)](https://github.com/ocvSHANTO)
-[![Facebook](https://img.shields.io/badge/Facebook-profile-1877f2?logo=facebook&logoColor=white)](https://www.facebook.com/share/1FJzrKEALE/)
-[![Instagram](https://img.shields.io/badge/Instagram-ocb__shanto-e4405f?logo=instagram&logoColor=white)](https://www.instagram.com/ocb__shanto?igsh=MXAwM3BvaTVhMXhkbA==)
-[![X](https://img.shields.io/badge/X-Junayed__SHANTO__-000000?logo=x&logoColor=white)](https://x.com/Junayed_SHANTO_)
-[![YouTube](https://img.shields.io/badge/YouTube-vortexinbloom-ff0000?logo=youtube&logoColor=white)](https://youtube.com/@vortexinbloom?si=WUHhDs4oy8OFb66y)
-[![Email](https://img.shields.io/badge/Email-Junayed.I.Shanto%40gmail.com-ea4335?logo=gmail&logoColor=white)](mailto:Junayed.I.Shanto@gmail.com)
-
-More projects: [Password Forge](https://ocvshanto.github.io/PasswordForge/) · [Rank Forge](https://ocvshanto.github.io/rank-forge/) · [Portfolio](https://github.com/ocvSHANTO/blackso-studio)
-
-If TierBloom helps you, please give the repository a star and share it.
-
-## License
-
-Released under the [MIT License](LICENSE). Copyright (c) 2026 Junayed Islam Shanto (Blackso Studio).
+The app itself is intentionally one file. That keeps it fast, portable and easy to host: copy `index.html` anywhere and it works.
 
 ---
 
-## বাংলা সারসংক্ষেপ
+## FAQ
 
-**TierBloom** একটা বিনামূল্যের, অফলাইন tier list বানানোর টুল। ছবি আঙুল দিয়ে ধরে tier-এ ছাড়ুন, তারপর ১৯টা layout আর ২৬টা রঙের palette-এ সুন্দর ছবি হিসেবে export করুন, ৮K পর্যন্ত। আপনার কোনো ছবি কোথাও আপলোড হয় না, সবকিছু আপনার ব্রাউজারেই চলে।
+**Are my photos uploaded anywhere?**
+No. Everything happens inside your browser. Nothing is sent to a server.
 
-<div align="center"><sub>Designed &amp; Developed by Shanto · Blackso Studio</sub></div>
+**Why does the board start empty?**
+Because it is your board. Demo items are available on purpose behind a separate button, so they never get mixed up with your own ranking.
+
+**Dragging scrolls the page on my phone.**
+Press and hold the card for a moment until it lifts, then drag. Moving first scrolls on purpose. You can also tap a card, then tap a tier.
+
+**What is the difference between themes?**
+Each theme redraws the layout, frames, fonts and background. Football looks like a stadium, Cinema looks like a poster, Newspaper looks like a front page. It is not a palette change.
+
+**What happens with Transparent Background and JPG?**
+Transparency only works in PNG. If you choose JPG, the app falls back to a solid background and tells you so clearly before download.
+
+**Why is my 4K export smaller than expected?**
+Browsers limit canvas size, especially on phones. TierBloom shows the true pixel size before download and steps down only when your device cannot render more.
+
+**Can I save a board and finish later?**
+Yes. Save it as a `.tierbloom` file, then open that file later. All tiers, colours and images come back.
+
+**Can I use exported images commercially?**
+Yes, provided you own or are licensed to use the images you imported. The app itself is MIT licensed.
+
+---
+
+## Roadmap
+
+- [x] Visual-first animated hero
+- [x] 12 separate export themes
+- [x] Aspect-ratio selector
+- [x] Transparent PNG export
+- [x] Frozen, real-time export preview
+- [x] Mobile-first long-press drag + tap-to-place
+- [ ] Undo / redo
+- [ ] Board templates (films, food, games, football)
+- [ ] Captions on exported cards
+- [ ] More languages
+- [ ] Custom theme builder
+
+Have an idea? Open an issue — the best next features come from people actually ranking things.
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork this repository.
+2. Make your change in `index.html` (keep it one file, no new dependencies).
+3. Test on a phone-sized screen as well as on desktop.
+4. Open a pull request with a short description and, if you changed the look, a screenshot.
+
+Please keep the app fast, private and dependency-free. That is the whole point of TierBloom.
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for the full text. You are free to use, copy, modify and share TierBloom, including for commercial projects, as long as the license notice is kept.
+
+---
+
+## Author
+
+**Junayed Islam Shanto (Shanto), Blackso Studio, Bangladesh.**
+
+Independent Web Developer, Android App Developer, UI/UX Designer and AI Enthusiast.
+
+- GitHub: [@ocvSHANTO](https://github.com/ocvSHANTO)
+- Project: [ocvSHANTO/TierBloom](https://github.com/ocvSHANTO/TierBloom)
+- Live demo: [ocvshanto.github.io/TierBloom](https://ocvshanto.github.io/TierBloom/)
+
+> Made for people who love ranking things — and want the result to look as good as the argument about it.
